@@ -94,8 +94,9 @@ DROP TABLE #Results
 /********************************************************/
 
 
-
-
+use [001] select * from tblEdComm
+	- equivalent to -
+select * from 001..[tblEdComm]
 
 
 
