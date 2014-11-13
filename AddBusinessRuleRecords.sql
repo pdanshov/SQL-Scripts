@@ -5,7 +5,10 @@
  *
  *		pdanshv@gmail.com 11.10.14
  *
- *		sys smconfig 		   = groups and sub-group menu items
+ *		sys smconfig 		   = groups and sub-group menu items,
+ *								 first field below is unique ID and fifth field
+ *								 is the subgroup (linking to an existing UID or not)
+ *								 e.g: CTConfigRef = ConfigRef
  *		sys smconfigvalue 	   = new record with configref equal to smconfig
  *		sys dbo.tblSmMenuDescr = main menu items
  *		sys dbo.tblSmMenu	   = sub-menu items
