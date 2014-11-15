@@ -1,0 +1,24 @@
+Simple string to string
+	InvoiceNumber as InvcNum,
+		or
+	'000123' as InvcNum,
+	
+Simple Number to Number
+	convert(decimal(20,10),InvoiceNumber) as InvcNum,
+		or
+	123 as InvcNum,
+
+
+Conditional on a Column use a case statement (Any number of 'When's, else is optional)
+   	InvoiceNumber as InvcNum,
+        case TransactionType
+		when 'A' then -1
+		when 'P' then -2
+		else 1
+   	end as RecType,        --smallint  2  Nullable             Transaction Type (1=Invoice/- 1=Credit Memo/-2=Payment)
+	0  as Status,          --tinyint   1  Nullable             0=Released, 1=Hold
+
+
+select max(cast(substring(fellowid,2,(len(fellowid)-1)) as int))
+from Fellowship.dbo.tblAdFellow
+where substring(fellowid,1,1)='0'

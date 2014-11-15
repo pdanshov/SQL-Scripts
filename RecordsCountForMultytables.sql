@@ -1,0 +1,1 @@
+select 'Select ''' + [name] +''' as TableName ,count(*) as RecordNum from ' + [name]+' union'    from sysobjects where name like 'tblIn%' and xtype='U'

@@ -1,0 +1,52 @@
+Subject:
+RE: Variable Database Execute
+From:
+"Carlton Kirby" <ckirby@csi-ny.com>
+Date:
+Tue, 21 Jun 2005 11:53:33 -0400
+To:
+"'Billy Armour'" <BArmour@csi-ny.com>
+
+Thanks for the help.. 
+
+Just in case the need ever arises, here's how I had to structure the SQL for
+the procedure calls that returned variables:
+
+EXEC MAD.dbo.trvsp_NextTransId 'INTRANS', 1, @TransID Out 
+
+became
+
+SET @sql1 = @CompId + '.dbo.trvsp_NextTransId '
+exec @sql1 'INTRANS', 1, @TransID Out 
+
+-----Original Message-----
+From: Billy Armour [mailto:BArmour@csi-ny.com] 
+Sent: Tuesday, June 21, 2005 10:08 AM
+To: Carlton Kirby
+Subject: Variable Database Execute
+
+Note if you comnmand contains '
+I thing you have to use ''''
+
+
+
+declare @x varchar(255)
+set @x=(select substring(db_name(),1,3)) + '.dbo.Utility_RefreshViews'
+exec @x
+
+
+
+this was in a database named XXXTranslate and I wanted it to write to
+traverse comany XXX
+
+
+
+declare @x varchar(255)
+set @x='XXX.dbo.Utility_RefreshViews'
+set @x=replace(@x,'XXX',@YourVar)
+exec @x
+
+
+
+
+
