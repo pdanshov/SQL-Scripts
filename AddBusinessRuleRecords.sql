@@ -5,10 +5,7 @@
  *
  *		pdanshv@gmail.com 11.10.14
  *
- *		sys smconfig 		   = groups and sub-group menu items,
- *								 first field below is unique ID and fifth field
- *								 is the subgroup (linking to an existing UID or not)
- *								 e.g: CTConfigRef = ConfigRef
+ *		sys smconfig 		   = groups and sub-group menu items
  *		sys smconfigvalue 	   = new record with configref equal to smconfig
  *		sys dbo.tblSmMenuDescr = main menu items
  *		sys dbo.tblSmMenu	   = sub-menu items
@@ -19,9 +16,9 @@
  *		Traverse Company Setup:
  *			System Manager -> Company Setup -> Business Rules -> Application -> EDI
  *
- *************************************************************************/
+ ************************************************************************/
 
-INSERT INTO [dbo].[tblSmConfig] (ConfigRef, RecType, AppId, ConfigId, CTConfigRef, OptConfigRef, DispSeq, Visible,
+INSERT INTO [SYS].[dbo].tblSmConfig (ConfigRef, RecType, AppId, ConfigId, CTConfigRef, OptConfigRef, DispSeq, Visible,
  RoleConfigYn, CaptionId, SrchID, DefaultValue, MaxWidth, RequiredYn, ValueListId, ReqAppId, ReadOnlyYn, MinValue, MaxValue)
 VALUES
 /*EdiGrpFa*/ ( 10023, 2048, 'ED', 'EdiGrpFa', 356, 0, 10, 1, 0, 'Functional Acknowledgment, 997', NULL, NULL, 0, 0, NULL, NULL, 0, NULL, NULL ),

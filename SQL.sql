@@ -141,6 +141,36 @@ DROP TABLE TestTable;
 GO
 
 
+ /*
 
+    Certain objects within MySQL, including database, table, index, column, alias, view, stored procedure, partition, tablespace, and other object names are known as identifiers.
+
+    ...
+
+    If an identifier contains special characters or is a reserved word, you must quote it whenever you refer to it.
+
+    ...
+
+    The identifier quote character is the backtick ("`"):
+
+A complete list of reserved words can be found in section 9.3 Reserved Words. Here are a few of the most commonly used ones:
+
++-------------------+--------------+--------------+
+| AND               | BEFORE       | BETWEEN      |
+| BY                | CALL         | CASE         |
+| CHANGE            | CHAR         | CHARACTER    |
+| COLUMN            | CURRENT_DATE | CURRENT_TIME |
+| CURRENT_TIMESTAMP | CURRENT_USER | DATABASES    |
+| DEFAULT           | DELETE       | DESC         |
+| DESCRIBE          | DISTINCT     | FOREIGN      |
+| FROM              | FULLTEXT     | INDEX        |
+| INSERT            | INTERVAL     | KEY          |
+| KEYS              | LIKE         | LIMIT        |
+| LONG              | MATCH        | NOT          |
+| OPTION            | READ         | REPEAT       |
+| REQUIRE           | RETURN       | TABLE        |
+| TO                | USER         | UTC_TIME     |
++-------------------+--------------+--------------+
+ */
 
 
