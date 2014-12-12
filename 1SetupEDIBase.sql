@@ -164,7 +164,9 @@ BEGIN
 	(21, ''EDIStoreCode'', ''<CustomField xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><FieldType>Text</FieldType><Description>Populated by EDI SO Generation; Manual Entry Also</Description><Required>false</Required><MaxLength>50</MaxLength><LimitToList>false</LimitToList><MinValue>0</MinValue><MaxValue>0</MaxValue><DropDownList /></CustomField>''),
 	(22, ''EDIPOLineNum'', ''<CustomField xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><FieldType>Text</FieldType><Description>PO Line Number</Description><Required>false</Required><MaxLength>0</MaxLength><LimitToList>false</LimitToList><MinValue>0</MinValue><MaxValue>0</MaxValue><DropDownList /></CustomField>''),
 	(23, ''EDIPartnerID'', ''<CustomField xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><FieldType>Text</FieldType><Description>Partner ID</Description><Required>false</Required><MaxLength>50</MaxLength><LimitToList>false</LimitToList><MinValue>0</MinValue><MaxValue>0</MaxValue><DropDownList /></CustomField>''),
-	(24, ''EDIARShipToID'', ''<CustomField xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><FieldType>Text</FieldType><Description>AR Ship To ID</Description><Required>false</Required><MaxLength>50</MaxLength><LimitToList>false</LimitToList><MinValue>0</MinValue><MaxValue>0</MaxValue><DropDownList /></CustomField>'');
+	(24, ''EDIARShipToID'', ''<CustomField xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><FieldType>Text</FieldType><Description>AR Ship To ID</Description><Required>false</Required><MaxLength>50</MaxLength><LimitToList>false</LimitToList><MinValue>0</MinValue><MaxValue>0</MaxValue><DropDownList /></CustomField>''),
+	(25, ''EDIGeneratedYN'', ''<CustomField xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><FieldType>YesNo</FieldType><Description>Generated Yes/No</Description><Required>false</Required><MaxLength>0</MaxLength><LimitToList>false</LimitToList><MinValue>0</MinValue><MaxValue>0</MaxValue><DropDownList /></CustomField>''),
+	(26, ''EDIDCCode'', ''<CustomField xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><FieldType>Text</FieldType><Description>EDI DC Code</Description><Required>false</Required><MaxLength>24</MaxLength><LimitToList>false</LimitToList><MinValue>0</MinValue><MaxValue>0</MaxValue><DropDownList /></CustomField>'');
 
 	SET IDENTITY_INSERT ['+@company+'].dbo.tblSmCustomField OFF;
 	SET IDENTITY_INSERT ['+@company+'].dbo.tblSmCustomFieldEntity ON;
@@ -219,6 +221,10 @@ BEGIN
 	(46, 23, ''tblSOTransheader'', null), --EDIPartnerID 23
 	(47, 24, ''tblARHistHeader'', null), --EDIARShipToID 24
 	(48, 24, ''tblSOTransheader'', null); --EDIARShipToID 24
+	(49, 25, ''tblARHistHeader'', null), --EDIPOLineNum 25
+	(50, 25, ''tblSOTransHeader'', null), --EDIPOLineNum 25
+	(51, 26, ''tblARHistHeader'', null), --EDIPOLineNum 26
+	(52, 26, ''tblSOTransHeader'', null), --EDIPOLineNum 26
 	SET IDENTITY_INSERT ['+@company+'].dbo.tblSmCustomFieldEntity OFF;
 	EXEC ['+@company+'].dbo.trav_DSViewRebuildAll_proc;
 	');
