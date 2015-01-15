@@ -48,11 +48,11 @@
 -----------------------------------------------------------------------------
 
 update [EDI].dbo.tblArShipTo
-set cf=dbo.fncUpdateCustomField(cf,'EDIInvoiceYN','True'))
+set cf=[EDI].dbo.fncUpdateCustomField(cf,'EDIInvoiceYN','True')
 update [EDI].dbo.tblArShipTo
-set cf=dbo.fncUpdateCustomField(cf,'EDIASNYN','True'))
+set cf=[EDI].dbo.fncUpdateCustomField(cf,'EDIASNYN','True')
 update [EDI].dbo.tblArShipTo
-set cf=dbo.fncUpdateCustomField(cf,'EDIShipToType','0'))
+set cf=[EDI].dbo.fncUpdateCustomField(cf,'EDIShipToType','0')
 
 
 
